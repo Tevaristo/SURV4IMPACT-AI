@@ -1,0 +1,26 @@
+{
+  "percurso_exercitado": [
+    "intake",
+    "structure",
+    "review",
+    "clarifications",
+    "decisions",
+    "report"
+  ],
+  "representacao_confirmada": true,
+  "instrumento": "Sintético de demonstração, completo para apreciação documental",
+  "analise_real_API": false,
+  "decisao_humana_real": false,
+  "relatorio": "Parcial",
+  "limite": "Percurso local verificado. Demonstração assistida completa e qualificação semântica pendentes de credenciais. Fixtures técnicas não substituem análise real.",
+  "dependencias": {
+    "streamlit": "1.59.2",
+    "python-docx": "1.2.0",
+    "pdfplumber": "0.11.9",
+    "pypdf": "6.10.0",
+    "pydantic": "2.13.4",
+    "openai": "2.45.0",
+    "pandas": "3.0.1",
+    "pytest": "9.1.1"
+  }
+}

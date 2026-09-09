@@ -1,0 +1,22 @@
+{
+  "ficheiros_preexistentes_conferidos": 85,
+  "alteracoes_preexistentes": [],
+  "alteracoes_motor_estado_api_testes_semanticos": [],
+  "chamadas_reais_api": 0,
+  "inspecao_visual": "Não realizada: nenhuma superfície de navegador disponível; iab indisponível",
+  "verificacao_tecnica_cabecalho": "Três imagens nativas; sem HTML/base64 em componentes de texto; cabeçalho único nas seis etapas; caminhos independentes do cwd",
+  "testes": {
+    "tests": "74",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "57.146"
+  },
+  "testes_reais_api_excluidos": 13,
+  "servidor": {
+    "url": "http://localhost:8502",
+    "porta": 8502,
+    "processo_iniciado": 20500,
+    "health": "ok"
+  }
+}

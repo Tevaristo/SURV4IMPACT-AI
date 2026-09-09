@@ -1,0 +1,119 @@
+[
+  {
+    "caso": "CT-01A",
+    "estatuto": "Aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-01B",
+    "estatuto": "Aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-01C",
+    "estatuto": "Aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-02",
+    "estatuto": "Provisório coerente — não aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-03",
+    "estatuto": "Aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-04A",
+    "estatuto": "Aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-04B",
+    "estatuto": "Provisório coerente — não aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-08A",
+    "estatuto": "Aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-10A",
+    "estatuto": "Provisório coerente — não aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-10C",
+    "estatuto": "Provisório coerente — não aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-12A",
+    "estatuto": "Aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-12B",
+    "estatuto": "Provisório coerente — não aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  },
+  {
+    "caso": "CT-13",
+    "estatuto": "Aprovado",
+    "fonte": "casos_teste_metodologicos_v11.md",
+    "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db",
+    "entrada_e_expectativas_carregadas": true,
+    "execucao_semantica_real": "Não executada — falta de API configurada",
+    "aprovacao_da_resposta": "Não atribuída"
+  }
+]

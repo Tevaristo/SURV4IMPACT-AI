@@ -1,0 +1,12 @@
+{
+  "correspondencias_preservadas": true,
+  "titulos_regras_conferidos_com_norma": true,
+  "regras_uma_por_paragrafo": true,
+  "campos_internos_ausentes": true,
+  "painel_aberto_e_fechado": true,
+  "larguras_verificadas": [
+    1440,
+    480
+  ],
+  "chamadas_api": 0
+}

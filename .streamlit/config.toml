@@ -1,0 +1,42 @@
+[theme]
+base = "light"
+primaryColor = "#024F75"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#EDF6F9"
+textColor = "#24323D"
+linkColor = "#0D28C2"
+codeTextColor = "#0F0D29"
+codeBackgroundColor = "#F3F9FB"
+borderColor = "#C5E5EC"
+dataframeBorderColor = "#C5E5EC"
+dataframeHeaderBackgroundColor = "#EDF6F9"
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "10px"
+buttonRadius = "8px"
+font = "Montserrat:https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap, sans-serif"
+headingFont = "Montserrat:https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap, sans-serif"
+baseFontSize = 15
+headingFontSizes = ["32px", "25px", "20px", "17px", "15px", "13px"]
+headingFontWeights = [700, 700, 650, 650, 600, 600]
+chartCategoricalColors = ["#024F75", "#34ABA2", "#3592CF", "#66B2CA", "#082A75", "#C1D9CB", "#0D28C2"]
+blueColor = "#3592CF"
+greenColor = "#278079"
+yellowColor = "#D7A43B"
+orangeColor = "#C96F24"
+redColor = "#C0504D"
+violetColor = "#6757A8"
+grayColor = "#60717D"
+
+[theme.sidebar]
+primaryColor = "#0D28C2"
+backgroundColor = "#F3F9FB"
+secondaryBackgroundColor = "#E5F2F5"
+textColor = "#24323D"
+borderColor = "#C5E5EC"
+
+[server]
+maxUploadSize = 50
+
+[browser]
+gatherUsageStats = false

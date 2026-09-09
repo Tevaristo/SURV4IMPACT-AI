@@ -1,0 +1,102 @@
+{
+  "versao": "v02",
+  "data": "2026-09-09",
+  "base": {
+    "ficheiro": "exemplo_casos_aprovados_v01.metadata.json",
+    "sha256": "bbf944cbed3cd7d8913ab744f3da039d75b4a9f566b4e24ce5642d5fede03710"
+  },
+  "recurso_revisao": {
+    "ficheiro": "exemplo_casos_aprovados_v02.json",
+    "sha256": "4d46dce535205cb079a812e85f645470c708d8f34c9cf64a757655dd0e9dd29b"
+  },
+  "conteudo_sha256": "6f09b2898488ea92f5e9300129d99a9785489c5145f0874d6fe40a1e7491933e",
+  "fontes_adicionais": {
+    "validacao_metodologica_ct12a_v03.md": {
+      "nome": "validacao_metodologica_ct12a_v03.md",
+      "versao": "v03 — revisão exclusiva de CT-12A",
+      "sha256": "0d48d9f41f4fca36f4afcb8715bf9a159383d8beeb656723a5d90c3bc8731c55"
+    }
+  },
+  "grupo_ct12a": {
+    "caso": "CT-12A",
+    "elementos": ["P7"],
+    "regras": ["D2.6-R08"],
+    "decisoes": ["DM-02", "decisão metodológica posterior da responsável — 2026-09-09"],
+    "origem": "D01, inquérito à população, Q08, p. 149 / PDF 22; contexto pp. 148–150 / PDF 21–23",
+    "adaptacoes": [
+      "Q08 renumerada P7; os quatro elementos posteriores ao enunciado são representados como alternativas de resposta, pela ordem original.",
+      "A hipótese de bateria com respostas dicotómicas separadas foi descartada por decisão metodológica posterior da responsável.",
+      "Experiência com serviços públicos transposta do indivíduo para o respondente em nome da entidade; essa adaptação de população não foi validada autonomamente.",
+      "Não foram acrescentadas opções Sim/Não, limites de seleção ou uma escolha entre multiplicidade única e múltipla."
+    ],
+    "esperado": {
+      "tipo_situacao": "problema demonstrado",
+      "proposicoes": [
+        "quatro_alternativas_presentes",
+        "regra_selecao_ausente_diretamente_observavel",
+        "alternativas_nao_mutuamente_exclusivas",
+        "interpretacao_escolha_unica_ou_multipla_possivel",
+        "respondentes_podem_aplicar_regras_distintas",
+        "pedir_ou_recomendar_definicao_regra_selecao",
+        "segunda_proposta_introduz_situacao_mais_frequente_e_exige_validacao",
+        "observacao_localizada_nao_classifica_criterio"
+      ],
+      "evidencia": "Existem quatro alternativas e não existe uma instrução que indique quantas podem ou devem ser selecionadas.",
+      "problema": "A regra de seleção não está definida.",
+      "justificacao": "As alternativas não são mutuamente exclusivas, permitindo interpretar a pergunta como escolha única ou múltipla.",
+      "consequencia": "Diferentes respondentes podem aplicar regras de resposta distintas, prejudicando a consistência e a interpretação dos resultados.",
+      "acao": "pedido de esclarecimento",
+      "acao_dirigida": "Esclarecer se deve ser selecionada uma única alternativa ou todas as alternativas aplicáveis.",
+      "estados": ["A aguardar esclarecimento"],
+      "propostas_condicionais": {
+        "escolha_multipla": "Selecione todas as opções aplicáveis.",
+        "escolha_unica": "Selecione a opção que melhor descreve a situação mais frequente.",
+        "limite_escolha_unica": "A expressão «situação mais frequente» não consta da pergunta original e exige validação metodológica."
+      },
+      "conclusao_positiva_localizada": false,
+      "classificacao_integral_determinada": false,
+      "inferencias_proibidas": [
+        "representar_como_bateria",
+        "atribuir_escolha_unica",
+        "atribuir_escolha_multipla",
+        "inventar_limites_selecao",
+        "pedir_ou_criar_escala_sim_nao",
+        "classificar_criterio"
+      ]
+    },
+    "validacao_origem": {
+      "estatuto": "Decisão metodológica posterior da responsável",
+      "data": "2026-09-09",
+      "fonte": "validacao_metodologica_ct12a_v03.md",
+      "secao": "CT-12A — ausência observável da regra de seleção em P7",
+      "sha256_ficha_validacao": "0d48d9f41f4fca36f4afcb8715bf9a159383d8beeb656723a5d90c3bc8731c55",
+      "historico_preservado": "validacao_metodologica_casos_v02.md"
+    },
+    "proveniencia_entrada_expectativas": {
+      "fonte": "validacao_metodologica_ct12a_v03.md",
+      "sha256_documento": "0d48d9f41f4fca36f4afcb8715bf9a159383d8beeb656723a5d90c3bc8731c55"
+    }
+  },
+  "alteracoes_ct13": {
+    "anterior": "Preservada a opção «Não,» e a menção «em %» sem criar campo numérico.",
+    "novo": "Corrigida a gralha «Não,» para «Não» em P6.2; preservada a menção «em %» de P6.4 sem criar campo numérico."
+  },
+  "limites_removidos": [
+    "P7 permite distinguir as origens possíveis da lacuna, mas não comprova um erro de extração ou defeito do instrumento."
+  ],
+  "limites_adicionados": [
+    "Em P5, o modelo não dispõe de um campo de âmbito que associe inequivocamente mínimo e máximo a cada linha; conserva-se literalmente «Uma resposta por linha» sem preencher limites globais.",
+    "Em P3 e P4, 0–100 limita o valor numérico, não a quantidade de opções. O intervalo permanece no enunciado porque o modelo não tem colunas próprias para limites de valores numéricos.",
+    "Em P7, as quatro alternativas estão confirmadas; o problema demonstrado é a ausência da regra de seleção. Não se atribuem escolha única, escolha múltipla, bateria ou escala Sim/Não.",
+    "A observação localizada de P7 não determina automaticamente a classificação integral de D2.6."
+  ],
+  "revisao_registada": {
+    "descricao": "Auditoria da transcrição, representação estruturada, tabela e exportações; decisão posterior exclusiva de CT-12A.",
+    "historico_preservado": [
+      "exemplo_casos_aprovados_v01.json",
+      "exemplo_casos_aprovados_v01.metadata.json",
+      "validacao_metodologica_casos_v02.md",
+      "casos_teste_metodologicos_v11.md"
+    ]
+  }
+}

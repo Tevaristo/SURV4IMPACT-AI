@@ -1,0 +1,125 @@
+{
+  "id": "casos_aprovados_ilustrativo_v01",
+  "versao": "ilustrativo v02 — 2026-09-09",
+  "revisao": "Decisão metodológica posterior sobre CT-12A e auditoria da leitura estruturada",
+  "base": {
+    "ficheiro": "exemplo_casos_aprovados_v01.json",
+    "sha256": "5461f8583893cbbb89bc009474b74c6df6cf618b537646b8111631b4f52c5d8c"
+  },
+  "substituicoes_texto": [
+    {
+      "anterior": "Versão ilustrativa v01.",
+      "novo": "Versão ilustrativa v02.",
+      "ocorrencias": 1
+    },
+    {
+      "anterior": "Opções: 1 | 2 | 3 | 4 | 5",
+      "novo": "Opções:\n- 1\n- 2\n- 3\n- 4\n- 5",
+      "ocorrencias": 8
+    },
+    {
+      "anterior": "Colunas: Abaixo do contratado (menos de 80%) | Abaixo do contratado (80-95%) | De acordo com o contratado (95-100%) | Acima do contratado",
+      "novo": "Colunas:\n- Abaixo do contratado (menos de 80%)\n- Abaixo do contratado (80-95%)\n- De acordo com o contratado (95-100%)\n- Acima do contratado",
+      "ocorrencias": 1
+    },
+    {
+      "anterior": "Linhas: Expectativa sobre a execução dos valores de investimento contratados.",
+      "novo": "Linhas: Expectativa sobre a execução dos valores de investimento contratados",
+      "ocorrencias": 1
+    },
+    {
+      "anterior": "Opções: Sim | Não\n\nP6.2.",
+      "novo": "Opções:\n- Sim\n- Não\n\nP6.2.",
+      "ocorrencias": 1
+    },
+    {
+      "anterior": "Opções: Sim | Não,",
+      "novo": "Opções:\n- Sim\n- Não",
+      "ocorrencias": 1
+    },
+    {
+      "anterior": "Opções: Não | Sim, mas com alterações: menor dimensão financeira; redução no valor de investimento em % | Sim, mas com alterações: maior faseamento/prazo mais alargado na realização dos investimentos planeados | Sim, sem alterações, mas recorrendo a outras fontes de financiamento | Sim, sem alterações, mas recorrendo apenas a autofinanciamento",
+      "novo": "Opções:\n- Não\n- Sim, mas com alterações: menor dimensão financeira; redução no valor de investimento em %\n- Sim, mas com alterações: maior faseamento/prazo mais alargado na realização dos investimentos planeados\n- Sim, sem alterações, mas recorrendo a outras fontes de financiamento\n- Sim, sem alterações, mas recorrendo apenas a autofinanciamento",
+      "ocorrencias": 1
+    },
+    {
+      "anterior": "Enunciados:\n- Pôde escolher",
+      "novo": "Opções ou alternativas:\n- Pôde escolher",
+      "ocorrencias": 1
+    }
+  ],
+  "elementos": {
+    "INTRO": {
+      "regra_selecao": "Não aplicável",
+      "numero_minimo": null,
+      "numero_maximo": null,
+      "outra_condicao_resposta": ""
+    },
+    "SAT": {
+      "regra_selecao": "Não aplicável",
+      "numero_minimo": null,
+      "numero_maximo": null,
+      "outra_condicao_resposta": ""
+    },
+    "P2a": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P2b": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P2c": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P2d": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P2e": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P2f": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P2g": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P2h": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P3": {"regra_selecao": "Não aplicável", "numero_minimo": null, "numero_maximo": null, "outra_condicao_resposta": ""},
+    "P4": {"regra_selecao": "Não aplicável", "numero_minimo": null, "numero_maximo": null, "outra_condicao_resposta": ""},
+    "P5": {
+      "formato": "matriz",
+      "linhas": ["Expectativa sobre a execução dos valores de investimento contratados"],
+      "regra_selecao": "Outra condição indicada no questionário",
+      "numero_minimo": null,
+      "numero_maximo": null,
+      "outra_condicao_resposta": "Uma resposta por linha"
+    },
+    "APOIO": {
+      "regra_selecao": "Não aplicável",
+      "numero_minimo": null,
+      "numero_maximo": null,
+      "outra_condicao_resposta": ""
+    },
+    "P6.1": {"regra_selecao": "Uma única resposta", "numero_minimo": 1, "numero_maximo": 1, "outra_condicao_resposta": ""},
+    "P6.2": {
+      "opcoes": ["Sim", "Não"],
+      "regra_selecao": "Uma única resposta",
+      "numero_minimo": 1,
+      "numero_maximo": 1,
+      "outra_condicao_resposta": ""
+    },
+    "P6.4": {
+      "regra_selecao": "Uma única resposta",
+      "numero_minimo": 1,
+      "numero_maximo": 1,
+      "outra_condicao_resposta": ""
+    },
+    "P7": {
+      "formato": "não confirmado",
+      "opcoes": [
+        "Pôde escolher qual o canal de atendimento (presencial, eletrónico, etc.) que mais lhe convinha",
+        "Conseguiu resolver o seu problema num único local ou serviço público",
+        "Conseguiu resolver o seu problema numa única deslocação ou interação",
+        "Precisou de juntar documentos de outros serviços públicos para poder dar andamento aos processos (comprovativo de residência, declaração de rendimentos, etc.)"
+      ],
+      "subitens": [],
+      "linhas": [],
+      "colunas": [],
+      "regra_selecao": "Não foi possível confirmar",
+      "numero_minimo": null,
+      "numero_maximo": null,
+      "outra_condicao_resposta": ""
+    },
+    "FIM": {
+      "regra_selecao": "Não aplicável",
+      "numero_minimo": null,
+      "numero_maximo": null,
+      "outra_condicao_resposta": ""
+    }
+  }
+}

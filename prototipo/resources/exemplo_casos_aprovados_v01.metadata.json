@@ -1,0 +1,667 @@
+{
+  "id": "casos_aprovados_ilustrativo_v01",
+  "versao": "v01",
+  "data": "2026-09-09",
+  "titulo": "Questionário ilustrativo construído a partir de casos metodológicos validados",
+  "rotulo_botao": "Carrega um questionário ilustrativo preparado a partir de casos metodológicos validados, para experimentar o percurso da aplicação.",
+  "limite_visivel": "Os comportamentos associados às situações assinaladas foram validados; a classificação integral do questionário não constitui um resultado histórico validado.",
+  "natureza": "Construção ilustrativa, não questionário histórico original.",
+  "estatuto": "Aprovação dos comportamentos dos casos de origem; montagem, adaptações de público/contexto e classificação integral não submetidas a validação autónoma.",
+  "fontes": {
+    "criterios_v08.md": {
+      "nome": "criterios_v08.md",
+      "versao": "v08",
+      "sha256": "851e0e7cb4e8d583bce856f67e6e33827fca88e34ce8609bea32ff042bb2c26f"
+    },
+    "casos_teste_metodologicos_v11.md": {
+      "nome": "casos_teste_metodologicos_v11.md",
+      "versao": "v11",
+      "sha256": "b22998089ae0a2465855ce8f20af3df0d71a6df4096591e83182633bc3f220db"
+    },
+    "validacao_metodologica_casos_v02.md": {
+      "nome": "validacao_metodologica_casos_v02.md",
+      "versao": "v02",
+      "sha256": "f05953b94057c89c9fd5ec465f822aeff3a243519cb36f6885372855f337720d"
+    },
+    "inventario_documentos_teste_v11.md": {
+      "nome": "inventario_documentos_teste_v11.md",
+      "versao": "v11",
+      "sha256": "c3242ab031c7fe7493b376d951f749943eb6fd005ba09a89cdcf07a70adbbc0c"
+    }
+  },
+  "conteudo_sha256": "5461f8583893cbbb89bc009474b74c6df6cf618b537646b8111631b4f52c5d8c",
+  "casos_aprovados_utilizados": [
+    "CT-03",
+    "CT-04A",
+    "CT-08A",
+    "CT-12A",
+    "CT-13"
+  ],
+  "criterios_abrangidos": [
+    "D2.3",
+    "D2.4",
+    "D2.6"
+  ],
+  "regras_abrangidas": [
+    "D2.3-R03",
+    "D2.4-R01",
+    "D2.4-R05",
+    "D2.4-R06",
+    "D2.6-R01",
+    "D2.6-R07",
+    "D2.6-R08"
+  ],
+  "decisoes_transversais": [
+    "DM-01",
+    "DM-02",
+    "DM-04",
+    "DM-05"
+  ],
+  "alcance": "recorte localizado",
+  "classificacao_integral_validada": false,
+  "correspondencia": [
+    {
+      "elemento": "INTRO",
+      "caso": "CT-03",
+      "regras": [
+        "D2.4-R06"
+      ],
+      "localizacao_original": "D06 §8.7, introdução e Q1–Q14, pp. 80–81 / PDF 91–92",
+      "papel": "instrução/contexto"
+    },
+    {
+      "elemento": "P1",
+      "caso": "CT-03",
+      "regras": [
+        "D2.4-R06"
+      ],
+      "localizacao_original": "D06 §8.7, introdução e Q1–Q14, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "SAT",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "instrução/contexto"
+    },
+    {
+      "elemento": "P2a",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P2b",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P2c",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P2d",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P2e",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P2f",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P2g",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P2h",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P3",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P4",
+      "caso": "CT-04A",
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "localizacao_original": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P5",
+      "caso": "CT-08A",
+      "regras": [
+        "D2.4-R01",
+        "D2.4-R05"
+      ],
+      "localizacao_original": "D05 §3.2, bloco D, Q11, p. 96 / PDF 4",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "APOIO",
+      "caso": "CT-13",
+      "regras": [
+        "D2.3-R03"
+      ],
+      "localizacao_original": "D09R, P8/8.1–8.2.1 p. 95 / PDF 115; Tabela 13 p. 92 / PDF 112; Tabela 33 p. 264 / PDF 284; TdM pp. 66–67 / PDF 86–87",
+      "papel": "instrução/contexto"
+    },
+    {
+      "elemento": "P6.1",
+      "caso": "CT-13",
+      "regras": [
+        "D2.3-R03"
+      ],
+      "localizacao_original": "D09R, P8/8.1–8.2.1 p. 95 / PDF 115; Tabela 13 p. 92 / PDF 112; Tabela 33 p. 264 / PDF 284; TdM pp. 66–67 / PDF 86–87",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P6.2",
+      "caso": "CT-13",
+      "regras": [
+        "D2.3-R03"
+      ],
+      "localizacao_original": "D09R, P8/8.1–8.2.1 p. 95 / PDF 115; Tabela 13 p. 92 / PDF 112; Tabela 33 p. 264 / PDF 284; TdM pp. 66–67 / PDF 86–87",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P6.3",
+      "caso": "CT-13",
+      "regras": [
+        "D2.3-R03"
+      ],
+      "localizacao_original": "D09R, P8/8.1–8.2.1 p. 95 / PDF 115; Tabela 13 p. 92 / PDF 112; Tabela 33 p. 264 / PDF 284; TdM pp. 66–67 / PDF 86–87",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P6.4",
+      "caso": "CT-13",
+      "regras": [
+        "D2.3-R03"
+      ],
+      "localizacao_original": "D09R, P8/8.1–8.2.1 p. 95 / PDF 115; Tabela 13 p. 92 / PDF 112; Tabela 33 p. 264 / PDF 284; TdM pp. 66–67 / PDF 86–87",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P6.5",
+      "caso": "CT-13",
+      "regras": [
+        "D2.3-R03"
+      ],
+      "localizacao_original": "D09R, P8/8.1–8.2.1 p. 95 / PDF 115; Tabela 13 p. 92 / PDF 112; Tabela 33 p. 264 / PDF 284; TdM pp. 66–67 / PDF 86–87",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P7",
+      "caso": "CT-12A",
+      "regras": [
+        "D2.6-R08"
+      ],
+      "localizacao_original": "D01, inquérito à população, Q08, p. 149 / PDF 22; contexto pp. 148–150 / PDF 21–23",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "P8",
+      "caso": "CT-03",
+      "regras": [
+        "D2.4-R06"
+      ],
+      "localizacao_original": "D06 §8.7, introdução e Q1–Q14, pp. 80–81 / PDF 91–92",
+      "papel": "pergunta"
+    },
+    {
+      "elemento": "FIM",
+      "caso": "CT-03",
+      "regras": [
+        "D2.4-R06"
+      ],
+      "localizacao_original": "D06 §8.7, introdução e Q1–Q14, pp. 80–81 / PDF 91–92",
+      "papel": "instrução/contexto"
+    }
+  ],
+  "grupos": [
+    {
+      "caso": "CT-03",
+      "elementos": [
+        "INTRO",
+        "P1",
+        "P8",
+        "FIM"
+      ],
+      "regras": [
+        "D2.4-R06"
+      ],
+      "origem": "D06 §8.7, introdução e Q1–Q14, pp. 80–81 / PDF 91–92",
+      "adaptacoes": [
+        "Madeira 14–20 e instituições históricas substituídos por programa e unidades fictícios.",
+        "Público explicitado como entidades parceiras também promotoras de projetos.",
+        "Duração de cinco minutos conservada como previsão ilustrativa, sem validação empírica desta montagem.",
+        "Campos livres de identificação e comentários explicitados na montagem; nenhuma resposta ou identificação real incorporada.",
+        "Promessa de confidencialidade preservada; condições de uso/divulgação não completadas."
+      ],
+      "esperado": {
+        "proposicoes": [
+          "ausencia_incompatibilidade_automatica_identificacao_confidencialidade",
+          "nao_promete_anonimato",
+          "proposito_responsaveis_publico_duracao_documentados",
+          "uso_divulgacao_respostas_comentarios_insuficientemente_documentados",
+          "esclarecimento_indispensavel_sobre_uso_divulgacao_associacao_entidade",
+          "explicacao_nao_equivale_incorporacao"
+        ],
+        "acao": "pedido de esclarecimento",
+        "estados": [
+          "A aguardar esclarecimento"
+        ],
+        "conclusao_positiva_localizada": true,
+        "apreciacao_integral_regra_concluida": false,
+        "inferencias_proibidas": [
+          "anonimato_garantido",
+          "divulgacao_apenas_agregada",
+          "praticas_inadequadas_demonstradas",
+          "eliminar_identificacao",
+          "classificar_criterio"
+        ]
+      },
+      "validacao_origem": {
+        "estatuto": "Aprovado",
+        "data": "2026-09-08",
+        "fonte": "validacao_metodologica_casos_v02.md",
+        "secao": "CT-03",
+        "sha256_ficha_validacao": "ba0d6252b889e9c4e4e215d8e14ed2b7ae157e74119eec360e859b39e3fe4660"
+      },
+      "proveniencia_entrada_expectativas": {
+        "fonte": "casos_teste_metodologicos_v11.md",
+        "secao": "CT-03",
+        "sha256_secoes": {
+          "B": "a47b1f0d66011084baf4e1e01cf5028f60a7ada531e8e9b9fd51ec66bf70160a",
+          "C": "7f1261103bed2994133f9bbebadb0381070ae3ba602f544b0ea23646ca90f15e",
+          "D": "3fac118dfeeb36c7b2c0a0ff501b76e6f758659f638c03e47315b415470d4af6"
+        }
+      }
+    },
+    {
+      "caso": "CT-04A",
+      "elementos": [
+        "SAT",
+        "P2a",
+        "P2b",
+        "P2c",
+        "P2d",
+        "P2e",
+        "P2f",
+        "P2g",
+        "P2h",
+        "P3",
+        "P4"
+      ],
+      "regras": [
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "origem": "D06 §8.7, Q4–Q13, pp. 80–81 / PDF 91–92",
+      "adaptacoes": [
+        "Q4–Q11 renumeradas P2a–P2h; todos os oito referentes da família de satisfação conservados.",
+        "Instrução de satisfação apresentada também como instrução partilhada SAT, sem mudar o seu alcance.",
+        "Valores 1 a 5 explicitados como escolhas na montagem; não se afirma que esse controlo reproduza a implementação histórica.",
+        "IEM/medidas Madeira substituídos por Unidade de Gestão/medidas do programa fictício.",
+        "Q12/Q13 renumeradas P3/P4, conservando 0–100 e dimensões relevância/sucesso; sem rótulos intermédios novos."
+      ],
+      "esperado": {
+        "proposicoes": [
+          "satisfacao_1_5_familia_estavel",
+          "relevancia_e_sucesso_0_100_dimensoes_distintas",
+          "diversidade_funcional_localmente_adequada"
+        ],
+        "acao": "nenhuma ação",
+        "estados": [
+          "Concluída"
+        ],
+        "conclusao_positiva_localizada": true,
+        "inferencias_proibidas": [
+          "harmonizar_pelo_numero_de_pontos",
+          "criar_rotulos_intermedios",
+          "todas_escalas_adequadas",
+          "comparabilidade_empirica",
+          "classificar_criterio"
+        ]
+      },
+      "validacao_origem": {
+        "estatuto": "Aprovado",
+        "data": "2026-09-08",
+        "fonte": "validacao_metodologica_casos_v02.md",
+        "secao": "CT-04A",
+        "sha256_ficha_validacao": "b4fddef52ecee2b07f17d726d1214b32e9f592efdc7e894a0428c25d85450a73"
+      },
+      "proveniencia_entrada_expectativas": {
+        "fonte": "casos_teste_metodologicos_v11.md",
+        "secao": "CT-04A",
+        "sha256_secoes": {
+          "B": "bf99e78336432673985524f9ebd5b33d8296ac6b39cbe3c813e62d5b5646ee1a",
+          "C": "b1fc5f8b57798211e62ca947c5d5de29241610d76586619e7702a51b89e1c01f",
+          "D": "137f055ae09b7b0b3a2b710f45284137169e3448dee151618987cba71bd94e5e"
+        }
+      }
+    },
+    {
+      "caso": "CT-08A",
+      "elementos": [
+        "P5"
+      ],
+      "regras": [
+        "D2.4-R01",
+        "D2.4-R05"
+      ],
+      "origem": "D05 §3.2, bloco D, Q11, p. 96 / PDF 4",
+      "adaptacoes": [
+        "Q11 renumerada P5, com texto, condição, linha e quatro colunas conservados.",
+        "Projeto A é apenas designação fictícia para tornar autónoma a referência; não é uma resposta ao estado de conclusão.",
+        "Condição restrita a P5; não estendida a perguntas sobre outros objetos."
+      ],
+      "esperado": {
+        "proposicoes": [
+          "nao_concluido_expectativa",
+          "concluido_execucao_financeira_alcancada",
+          "condicao_explicita",
+          "adequacao_localizada_referencia_condicional",
+          "instrucao_apenas_P5"
+        ],
+        "acao": "nenhuma ação",
+        "estados": [
+          "Concluída"
+        ],
+        "conclusao_positiva_localizada": true,
+        "inferencias_proibidas": [
+          "exigir_dois_valores_a_todos",
+          "ambiguidade_automatica",
+          "validar_todas_escalas",
+          "estender_condicao_a_outros_itens",
+          "classificar_criterio"
+        ]
+      },
+      "validacao_origem": {
+        "estatuto": "Aprovado",
+        "data": "2026-09-08",
+        "fonte": "validacao_metodologica_casos_v02.md",
+        "secao": "CT-08A",
+        "sha256_ficha_validacao": "f51a9d7bc4c4748796f59d56bb02264fa2e56d6e257af389e048c65caf3dfc8b"
+      },
+      "proveniencia_entrada_expectativas": {
+        "fonte": "casos_teste_metodologicos_v11.md",
+        "secao": "CT-08A",
+        "sha256_secoes": {
+          "B": "419ddf8c6117dffb0b3cd356427838cc5483a74b838bc45dff3caf0cef3ce82d",
+          "C": "e7958efa59982e7aee9f32a953f6d63ef73c7f11103322f977cdb1890d4b473d",
+          "D": "8dc4be40e3d31546cbef2b9aac975658d6292f6bad0fd6a6e237fe1ecc3e8d98"
+        }
+      }
+    },
+    {
+      "caso": "CT-12A",
+      "elementos": [
+        "P7"
+      ],
+      "regras": [
+        "D2.6-R08"
+      ],
+      "decisoes": [
+        "DM-02"
+      ],
+      "origem": "D01, inquérito à população, Q08, p. 149 / PDF 22; contexto pp. 148–150 / PDF 21–23",
+      "adaptacoes": [
+        "Q08 renumerada P7; conservados os quatro enunciados e a indeterminação da unidade/formato de resposta.",
+        "Experiência com serviços públicos transposta do indivíduo para o respondente em nome da entidade; essa nova população não foi validada autonomamente.",
+        "Não se importam opções de Q09, resultados D02A ou a declaração de indisponibilidade de CT-12B.",
+        "Não foi introduzido propositadamente um erro de parser; a origem da lacuna continua indeterminada."
+      ],
+      "esperado": {
+        "proposicoes": [
+          "quatro_enunciados_sem_formato_opcoes_confirmados",
+          "origem_indeterminada",
+          "pedir_unidade_formato_instrucoes_opcoes_localizacao_versao",
+          "distinguir_A_extracao_B_documentacao_C_instrumento_com_evidencia",
+          "suspender_apenas_verificacoes_dependentes"
+        ],
+        "acao": "pedido de esclarecimento",
+        "estados": [
+          "A aguardar esclarecimento",
+          "A aguardar validação da extração"
+        ],
+        "conclusao_positiva_localizada": false,
+        "inferencias_proibidas": [
+          "inventar_sim_nao",
+          "copiar_escala_vizinha",
+          "diagnosticar_defeito_por_ausencia",
+          "declarar_indisponibilidade_por_silencio",
+          "classificar_criterio"
+        ]
+      },
+      "validacao_origem": {
+        "estatuto": "Aprovado",
+        "data": "2026-09-08",
+        "fonte": "validacao_metodologica_casos_v02.md",
+        "secao": "CT-12A",
+        "sha256_ficha_validacao": "5fce696fc3cb9be525cba2abb487059ed1bfb5578a9524e3903bf76f96082058"
+      },
+      "proveniencia_entrada_expectativas": {
+        "fonte": "casos_teste_metodologicos_v11.md",
+        "secao": "CT-12A",
+        "sha256_secoes": {
+          "B": "0c09cfccbcaef0ae0cc00f192cc1fe2ab3c9abdc89913e362288a0764cef8705",
+          "C": "ef1f16b7df656893c4e5d4a93b52a94a4439b5e31c625053ea3917f5f4d115c8",
+          "D": "c879fa9eb15646e0e0d96bf8fab441d8beeb0a8b176d921503c95d83b4fd9de9"
+        }
+      }
+    },
+    {
+      "caso": "CT-13",
+      "elementos": [
+        "APOIO",
+        "P6.1",
+        "P6.2",
+        "P6.3",
+        "P6.4",
+        "P6.5"
+      ],
+      "regras": [
+        "D2.3-R03"
+      ],
+      "origem": "D09R, P8/8.1–8.2.1 p. 95 / PDF 115; Tabela 13 p. 92 / PDF 112; Tabela 33 p. 264 / PDF 284; TdM pp. 66–67 / PDF 86–87",
+      "adaptacoes": [
+        "PO SEUR transposto para programa operacional ilustrativo com apoio europeu; mantidas as operações cognitivas e alternativas.",
+        "8.1/8.1.1/8.1.2/8.2/8.2.1 renumeradas P6.1–P6.5; condição de justificação associada explicitamente a P6.2.",
+        "Preservada a opção «Não,» e a menção «em %» sem criar campo numérico.",
+        "QA5, correspondência e contexto do modelo lógico adaptados e fornecidos como contexto interno, não como comunicação ao respondente.",
+        "9/9.1 e restantes perguntas do original não incluídas; não se atribui cobertura integral de QA5 nem matriz autoral por mecanismo."
+      ],
+      "esperado": {
+        "proposicoes": [
+          "correspondencia_formal_separada_confronto_substantivo",
+          "avanco_projetos_nao_previstos_prioritarios",
+          "alteracao_projetos_e_justificacao_condicional",
+          "cenario_sem_apoio_dimensao_prazo_financiamento",
+          "finalidade_avaliativa_adicionalidade_declarada",
+          "modelo_logico_aplicavel_sem_mapeamento_autoral_fino",
+          "adequacao_localizada_sem_prova_causal"
+        ],
+        "acao": "nenhuma ação",
+        "estados": [
+          "Concluída"
+        ],
+        "conclusao_positiva_localizada": true,
+        "inferencias_proibidas": [
+          "alinhamento_apenas_pelos_numeros",
+          "efeito_causal_demonstrado",
+          "cobertura_integral_QA5",
+          "inventar_campo_percentagem",
+          "exigir_nova_tabela_TdM_por_principio",
+          "classificar_criterio"
+        ]
+      },
+      "validacao_origem": {
+        "estatuto": "Aprovado",
+        "data": "2026-09-08",
+        "fonte": "validacao_metodologica_casos_v02.md",
+        "secao": "CT-13",
+        "sha256_ficha_validacao": "d81400e689222329a917a5d68995dec298d7c1edff5cdb9657803b8ab1012389"
+      },
+      "proveniencia_entrada_expectativas": {
+        "fonte": "casos_teste_metodologicos_v11.md",
+        "secao": "CT-13",
+        "sha256_secoes": {
+          "B": "42fbfb94d7a281f5671910ec0115138c77e8e62dee2ae1ada0e272557b47b714",
+          "C": "7bc586a59f1ce14a6ddcd083e42dafe4f2479e1e9e37051ef669ac5da527eb18",
+          "D": "f0d5d9ed3b4069ad96c735587be644fac5a010aba2e287f880ad585831778be4"
+        }
+      }
+    }
+  ],
+  "contexto_editorial": {
+    "origens": [
+      "CT-03",
+      "CT-04A",
+      "CT-08A",
+      "CT-12A",
+      "CT-13"
+    ],
+    "limite": "Ponte narrativa entre parceiros/promotores, unidade de resposta por bloco, programa/unidades fictícios e Projeto A. Não produz resultados metodológicos novos nem certifica a nova população."
+  },
+  "candidatos_avaliados": [
+    {
+      "candidato": "D06 §8.7 — parceiros Madeira 14–20, Q1–Q14",
+      "casos": [
+        "CT-03",
+        "CT-04A"
+      ],
+      "regras": [
+        "D2.4-R06",
+        "D2.6-R01",
+        "D2.6-R07"
+      ],
+      "resultado": "Adequação localizada da diversidade funcional; compatibilidade sem anonimato, mas uso/divulgação por esclarecer.",
+      "decisao": "Não selecionado como original integral: ausência de comportamento aprovado D2.3 e esclarecimento histórico indispensável para concluir R06.",
+      "omissoes": "Na montagem, nomes reais substituídos; Q2/Q3 originais de caracterização da parceria não transpostos."
+    },
+    {
+      "candidato": "D09R — PO SEUR, P8/8.1–8.2.1 e contexto QA5",
+      "casos": [
+        "CT-13"
+      ],
+      "regras": [
+        "D2.3-R03"
+      ],
+      "resultado": "Adequação localizada à adicionalidade declarada, sem ação corretiva.",
+      "decisao": "Autónomo e sem obtenção documental indispensável para R03; apenas uma regra/critério com resultado aprovado.",
+      "omissoes": "P9/P9.1 e restantes módulos não incluídos; identificações históricas substituídas no exemplo."
+    },
+    {
+      "candidato": "D05 §3.2 — Q11 e grelha",
+      "casos": [
+        "CT-08A"
+      ],
+      "regras": [
+        "D2.4-R01",
+        "D2.4-R05"
+      ],
+      "resultado": "Distinção condicional esperado/alcançado adequada, sem ação.",
+      "decisao": "Candidato autónomo para duas regras de D2.4; não cobre os três critérios.",
+      "omissoes": "Só Q11; restante instrumento não incorporado."
+    },
+    {
+      "candidato": "D03 — IEJ, destinos/codificação",
+      "casos": [
+        "CT-01A",
+        "CT-01B",
+        "CT-01C"
+      ],
+      "regras": [
+        "D2.3-R05"
+      ],
+      "resultado": "Prioridade/codificação por esclarecer, sem decisão automática do destino.",
+      "decisao": "Não escolhido: depende de esclarecimentos históricos e de um público/percurso distinto; transposição para parceiros/promotores alteraria o sentido substantivo.",
+      "omissoes": "Nenhum destes três percursos foi enxertado no exemplo."
+    },
+    {
+      "candidato": "D01 — população, Q08",
+      "casos": [
+        "CT-12A"
+      ],
+      "regras": [
+        "D2.6-R08"
+      ],
+      "resultado": "Pedido inicial com indeterminação de formato/opções.",
+      "decisao": "Serve para demonstrar a indeterminação localizada; não fornece questionário completo nem classificação.",
+      "omissoes": "Q01–Q07/Q09 e caracterização não transpostas; não incorporados D02A ou CT-12B."
+    }
+  ],
+  "limites": [
+    "Os casos não são regras e as expectativas não entram no payload normal da análise.",
+    "Nenhuma observação, resposta de esclarecimento, proposta ou decisão é pré-carregada.",
+    "Não há categoria global nem categorias por critério pré-definidas.",
+    "P7 permite distinguir as origens possíveis da lacuna, mas não comprova um erro de extração ou defeito do instrumento.",
+    "Não foi construído um problema demonstrado com correção obrigatória: CT-04B/CT-10C/CT-11B não estão aprovados. A inconsistência documental de CT-01B é válida no seu recorte, mas não foi transposta para evitar incoerência de público/percurso.",
+    "As adaptações não garantem reprodução automática dos resultados por um modelo. Os testes técnicos e de rastreabilidade não são execução semântica real.",
+    "Sem dados de respondentes, contactos, respostas reais ou informação confidencial. Nomes institucionais reais substituídos; não houve anonimização de respostas porque não foram incorporadas.",
+    "PDFs originais não relidos nesta alteração: as entradas B dos casos V11 já contêm transcrições e localizadores suficientes; nenhuma confirmação adicional do original é alegada."
+  ]
+}

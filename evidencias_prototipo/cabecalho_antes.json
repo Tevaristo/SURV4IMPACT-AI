@@ -1,0 +1,13 @@
+{
+  "app_prototipo.py": "1328764c6d184db98640eb12468d830597dbb95b9d6e833db84aa8c12c5455e5",
+  "prototipo/models.py": "5f3a998b82a23ab62d681492a97b920746f1db9e4774d784d807a59d58f786a9",
+  "prototipo/norma.py": "01e4d34860b7de9b920bd5fbfc1d43bcd42c4a4387aa764dbaadee7b6b0c987f",
+  "prototipo/state.py": "891dd77f1c186eaca1016aa219bd62b099abb581d0dde196a677a0310590b1c1",
+  "prototipo/extraction.py": "50aa89ce201ff0a924b5711e827b9eaed770156701c9e9c6c635012e921d134b",
+  "prototipo/api.py": "acfb0c00d4c5c2dc549f3eaba11a2951863d6839bce74246ed5ea24da79e9c14",
+  "prototipo/engine.py": "5596dafa9cafa048c36f4808ee0c2bfb64129f94e4137e402491f401688b0ad2",
+  "prototipo/reporting.py": "317d459bddbfffe1e7dee0850d7c2402c7681d664d7d4dad08ea70dbd5fcb74f",
+  "prototipo/demo.py": "b3ad347c3bd9bf68b0868893f00f4f0daca0e3240a0358c85168616ae864af75",
+  "tests_prototipo/test_reference_cases.py": "a3297b2b0282052ec4fb09145b02e2af72274419b7275b66bc796b59da9ea74b",
+  "tests_prototipo/cases.py": "e9cc316f32f80ad3828e61dc99d07a5db17beb76a7867855728bde8037158590"
+}

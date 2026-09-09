@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="7" time="22.062" timestamp="2026-09-09T10:15:05.985344+01:00" hostname="PC012169"><testcase classname="tests.test_app_navigation" name="test_brand_system_is_rendered_on_entry" time="10.544" /><testcase classname="tests.test_app_navigation" name="test_questionnaire_uploader_accepts_docx_and_pdf" time="1.081" /><testcase classname="tests.test_app_navigation" name="test_user_can_upload_and_analyse_a_pdf" time="1.263"><failure message="assert not [Exception(message=&quot;'Questionário' is not in list&quot;, stack_trace=['File &quot;C:\\Users\\tcleo\\OneDrive - ISCTE-IUL\\Docume...ne 736, in sidebar\n    index=STAGES.index(st.session_state.stage),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'])]&#10; +  where [Exception(message=&quot;'Questionário' is not in list&quot;, stack_trace=['File &quot;C:\\Users\\tcleo\\OneDrive - ISCTE-IUL\\Docume...ne 736, in sidebar\n    index=STAGES.index(st.session_state.stage),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'])] = list(ElementList(_list=[Exception(message=&quot;'Questionário' is not in list&quot;, stack_trace=['File &quot;C:\\Users\\tcleo\\OneDrive -...e 736, in sidebar\n    index=STAGES.index(st.session_state.stage),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'])]))&#10; +    where ElementList(_list=[Exception(message=&quot;'Questionário' is not in list&quot;, stack_trace=['File &quot;C:\\Users\\tcleo\\OneDrive -...e 736, in sidebar\n    index=STAGES.index(st.session_state.stage),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'])]) = AppTest(\n    _script_path='app.py',\n    default_timeout=30,\n    session_state={$$ID-11ace58adb4ce96f444dac2edf1f9e8c-N...              6: Caption()\n            }\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception">questionnaire_pdf_bytes = b'%PDF-1.4\n%\xe2\xe3\xcf\xd3\n1 0 obj\n&lt;&lt; /Type /Catalog /Pages 2 0 R &gt;&gt;\nendobj\n2 0 obj\n&lt;&lt; /Type /Pages /Kids [4 0...n \n0000000787 00000 n \n0000001226 00000 n \ntrailer\n&lt;&lt; /Size 9 /Root 1 0 R /Info 8 0 R &gt;&gt;\nstartxref\n1282\n%%EOF\n'
+
+&gt;   ???
+E   assert not [Exception(message="'Questionário' is not in list", stack_trace=['File "C:\\Users\\tcleo\\OneDrive - ISCTE-IUL\\Docume...ne 736, in sidebar\n    index=STAGES.index(st.session_state.stage),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'])]
+E    +  where [Exception(message="'Questionário' is not in list", stack_trace=['File "C:\\Users\\tcleo\\OneDrive - ISCTE-IUL\\Docume...ne 736, in sidebar\n    index=STAGES.index(st.session_state.stage),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'])] = list(ElementList(_list=[Exception(message="'Questionário' is not in list", stack_trace=['File "C:\\Users\\tcleo\\OneDrive -...e 736, in sidebar\n    index=STAGES.index(st.session_state.stage),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'])]))
+E    +    where ElementList(_list=[Exception(message="'Questionário' is not in list", stack_trace=['File "C:\\Users\\tcleo\\OneDrive -...e 736, in sidebar\n    index=STAGES.index(st.session_state.stage),\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'])]) = AppTest(\n    _script_path='app.py',\n    default_timeout=30,\n    session_state={$$ID-11ace58adb4ce96f444dac2edf1f9e8c-N...              6: Caption()\n            }\n        ),\n        2: SpecialBlock(\n            type='event'\n        )\n    }\n).exception
+
+C:\Users\tcleo\OneDrive - ISCTE-IUL\Documentos\surv4impact survey ai review tool\tests\test_app_navigation.py:40: AssertionError</failure></testcase><testcase classname="tests.test_app_navigation" name="test_corrupt_pdf_error_does_not_suggest_ocr" time="1.331" /><testcase classname="tests.test_app_navigation" name="test_replacing_a_pdf_uses_the_new_extracted_title" time="1.967"><failure message="assert 0 == 1&#10; +  where 0 = len([])">questionnaire_pdf_bytes = b'%PDF-1.4\n%\xe2\xe3\xcf\xd3\n1 0 obj\n&lt;&lt; /Type /Catalog /Pages 2 0 R &gt;&gt;\nendobj\n2 0 obj\n&lt;&lt; /Type /Pages /Kids [4 0...n \n0000000787 00000 n \n0000001226 00000 n \ntrailer\n&lt;&lt; /Size 9 /Root 1 0 R /Info 8 0 R &gt;&gt;\nstartxref\n1282\n%%EOF\n'
+alternate_questionnaire_pdf_bytes = b'%PDF-1.4\n%\xe2\xe3\xcf\xd3\n1 0 obj\n&lt;&lt; /Type /Catalog /Pages 2 0 R &gt;&gt;\nendobj\n2 0 obj\n&lt;&lt; /Type /Pages /Kids [4 0...n \n0000000787 00000 n \n0000001226 00000 n \ntrailer\n&lt;&lt; /Size 9 /Root 1 0 R /Info 8 0 R &gt;&gt;\nstartxref\n1281\n%%EOF\n'
+
+&gt;   ???
+
+C:\Users\tcleo\OneDrive - ISCTE-IUL\Documentos\surv4impact survey ai review tool\tests\test_app_navigation.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+app = AppTest(
+    _script_path='app.py',
+    default_timeout=30,
+    session_state={$$ID-11ace58adb4ce96f444dac2edf1f9e8c-N...              6: Caption()
+            }
+        ),
+        2: SpecialBlock(
+            type='event'
+        )
+    }
+)
+label = '← Voltar a Carregar'
+
+&gt;   ???
+E   assert 0 == 1
+E    +  where 0 = len([])
+
+C:\Users\tcleo\OneDrive - ISCTE-IUL\Documentos\surv4impact survey ai review tool\tests\test_app_navigation.py:6: AssertionError</failure></testcase><testcase classname="tests.test_app_navigation" name="test_new_analysis_does_not_reuse_the_previous_pdf_title" time="2.320"><failure message="assert 0 == 1&#10; +  where 0 = len([])">questionnaire_pdf_bytes = b'%PDF-1.4\n%\xe2\xe3\xcf\xd3\n1 0 obj\n&lt;&lt; /Type /Catalog /Pages 2 0 R &gt;&gt;\nendobj\n2 0 obj\n&lt;&lt; /Type /Pages /Kids [4 0...n \n0000000787 00000 n \n0000001226 00000 n \ntrailer\n&lt;&lt; /Size 9 /Root 1 0 R /Info 8 0 R &gt;&gt;\nstartxref\n1282\n%%EOF\n'
+alternate_questionnaire_pdf_bytes = b'%PDF-1.4\n%\xe2\xe3\xcf\xd3\n1 0 obj\n&lt;&lt; /Type /Catalog /Pages 2 0 R &gt;&gt;\nendobj\n2 0 obj\n&lt;&lt; /Type /Pages /Kids [4 0...n \n0000000787 00000 n \n0000001226 00000 n \ntrailer\n&lt;&lt; /Size 9 /Root 1 0 R /Info 8 0 R &gt;&gt;\nstartxref\n1281\n%%EOF\n'
+
+&gt;   ???
+
+C:\Users\tcleo\OneDrive - ISCTE-IUL\Documentos\surv4impact survey ai review tool\tests\test_app_navigation.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+app = AppTest(
+    _script_path='app.py',
+    default_timeout=30,
+    session_state={$$ID-11ace58adb4ce96f444dac2edf1f9e8c-N...              6: Caption()
+            }
+        ),
+        2: SpecialBlock(
+            type='event'
+        )
+    }
+)
+label = 'Nova análise'
+
+&gt;   ???
+E   assert 0 == 1
+E    +  where 0 = len([])
+
+C:\Users\tcleo\OneDrive - ISCTE-IUL\Documentos\surv4impact survey ai review tool\tests\test_app_navigation.py:6: AssertionError</failure></testcase><testcase classname="tests.test_app_navigation" name="test_user_can_go_back_and_reanalyse_without_uploading_again" time="1.751"><failure message="assert 0 == 1&#10; +  where 0 = len([])">&gt;   ???
+
+C:\Users\tcleo\OneDrive - ISCTE-IUL\Documentos\surv4impact survey ai review tool\tests\test_app_navigation.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+app = AppTest(
+    _script_path='app.py',
+    default_timeout=30,
+    session_state={$$ID-11ace58adb4ce96f444dac2edf1f9e8c-N...              6: Caption()
+            }
+        ),
+        2: SpecialBlock(
+            type='event'
+        )
+    }
+)
+label = '← Voltar a Carregar'
+
+&gt;   ???
+E   assert 0 == 1
+E    +  where 0 = len([])
+
+C:\Users\tcleo\OneDrive - ISCTE-IUL\Documentos\surv4impact survey ai review tool\tests\test_app_navigation.py:6: AssertionError</failure></testcase></testsuite></testsuites>

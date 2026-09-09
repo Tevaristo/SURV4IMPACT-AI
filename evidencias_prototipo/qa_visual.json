@@ -1,0 +1,12 @@
+{
+  "interface": {
+    "AppTest": "passou",
+    "navegador": "indisponível, incluindo iab",
+    "largura_normal_reduzida": "CSS e ordem testados; inspeção visual não concluída"
+  },
+  "docx": {
+    "estrutural": "passou",
+    "renderizacao": "tentada com render_docx.py; FileNotFoundError WinError 2, soffice não disponível",
+    "aprovacao_visual": false
+  }
+}

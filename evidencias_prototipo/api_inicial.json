@@ -1,0 +1,6 @@
+{
+  "sucesso": false,
+  "modelo": "gpt-5.6",
+  "latencia_s": null,
+  "erro_tecnico": "Sem configuração OPENAI_API_KEY; chamada não realizada."
+}

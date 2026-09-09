@@ -1,0 +1,26 @@
+{
+  "integridade_inicial.json": {
+    "ficheiros": 85,
+    "alterados": []
+  },
+  "cabecalho_antes.json": {
+    "ficheiros": 11,
+    "alterados": [
+      "prototipo/demo.py"
+    ]
+  },
+  "testes": {
+    "tecnicos_rastreabilidade_parser_exportacao": 82,
+    "aprovados": 82,
+    "semanticos_reais_nao_executados": 13,
+    "API_real_executada": false
+  },
+  "casos_origem_aprovados": [
+    "CT-03",
+    "CT-04A",
+    "CT-08A",
+    "CT-12A",
+    "CT-13"
+  ],
+  "validacao_integral_do_exemplo": false
+}
