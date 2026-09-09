@@ -1,0 +1,66 @@
+:root {
+  --brand-primary: #0d28c2;
+  --brand-primary-hover: #082a75;
+  --brand-primary-soft: #eef0ff;
+  --brand-primary-focus: rgba(13, 40, 194, .28);
+  --brand-disabled-background: #eef1f4;
+  --brand-disabled-border: #aeb8c2;
+  --brand-disabled-text: #5f6a74;
+}
+
+button[data-testid="stBaseButton-primary"] {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #ffffff;
+}
+
+button[data-testid="stBaseButton-primary"]:hover {
+  background: var(--brand-primary-hover);
+  border-color: var(--brand-primary-hover);
+  color: #ffffff;
+}
+
+button[data-testid="stBaseButton-primary"]:focus-visible {
+  border-color: var(--brand-primary);
+  outline: 3px solid var(--brand-primary-focus);
+  outline-offset: 2px;
+}
+
+button[data-testid="stBaseButton-primary"]:active {
+  background: var(--brand-primary-hover);
+  border-color: var(--brand-primary-hover);
+  color: #ffffff;
+}
+
+button[data-testid="stBaseButton-primary"]:disabled,
+button[data-testid="stBaseButton-secondary"]:disabled {
+  background: var(--brand-disabled-background);
+  border-color: var(--brand-disabled-border);
+  color: var(--brand-disabled-text);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+button[data-testid="stBaseButton-secondary"] {
+  background: #ffffff;
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+button[data-testid="stBaseButton-secondary"]:hover {
+  background: var(--brand-primary-soft);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+button[data-testid="stBaseButton-secondary"]:focus-visible {
+  border-color: var(--brand-primary);
+  outline: 3px solid var(--brand-primary-focus);
+  outline-offset: 2px;
+}
+
+button[data-testid="stBaseButton-secondary"]:active {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #ffffff;
+}

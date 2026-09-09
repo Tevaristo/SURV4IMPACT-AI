@@ -110,7 +110,7 @@ def test_streamlit_offers_portuguese_xlsx_and_csv_downloads():
     app.button(key="demo").click().run()
     downloads = {button.label: button.proto for button in app.download_button}
     assert downloads["Descarregar tabela em Excel"].url.endswith(".xlsx")
-    assert downloads["Descarregar tabela em Excel"].type == "primary"
+    assert downloads["Descarregar tabela em Excel"].type == "secondary"
     assert downloads["Descarregar em CSV"].url.endswith(".csv")
     assert downloads["Descarregar em CSV"].type == "secondary"
     other_formats = next(panel for panel in app.expander if panel.label == "Outros formatos")

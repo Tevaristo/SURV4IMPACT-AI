@@ -156,7 +156,7 @@ def intake(s):
         edited = st.data_editor(pd.DataFrame(rows), hide_index=True, disabled=["campo"], column_config={
             "disponibilidade": st.column_config.SelectboxColumn(options=AVAILABILITY, required=True),
             "visibilidade": st.column_config.SelectboxColumn(options=VISIBILITY, required=True)}, key="context_editor_" + s["id"])
-        if st.form_submit_button("Guardar contexto"):
+        if st.form_submit_button("Guardar contexto", type="primary"):
             save_context(s, {r.pop("campo"): r for r in edited.to_dict("records")}, s["documentos"])
             st.success("Contexto guardado com proveniência.")
     st.subheader("Documentos complementares, quando existam")
@@ -185,7 +185,7 @@ def intake(s):
             with st.form(f"doc_{s['id']}_{i}"):
                 content = st.text_area("Conferir/corrigir texto e localizadores", d["texto"], height=200)
                 faithful = st.checkbox("Texto conferido com o original", value=d["confirmado"])
-                if st.form_submit_button("Guardar confirmação documental"):
+                if st.form_submit_button("Guardar confirmação documental", type="primary"):
                     docs = deepcopy(s["documentos"])
                     docs[i].update(texto=content, confirmado=faithful)
                     save_context(s, s["contexto"], docs)
@@ -227,7 +227,8 @@ def structure(s):
         export_reading_xlsx(s["representacao"]),
         XLSX_FILENAME,
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        type="primary",
+        type="secondary",
+        key="download_reading_xlsx",
     )
     with st.expander("Outros formatos", expanded=False):
         st.download_button(
@@ -235,6 +236,8 @@ def structure(s):
             export_reading_csv(s["representacao"]),
             CSV_FILENAME,
             "text/csv",
+            type="secondary",
+            key="download_reading_csv",
         )
     # A versão instalada não permite traduzir ou desativar apenas este comando
     # da barra do editor. Ocultamo-lo porque os downloads próprios estão acima.
@@ -313,7 +316,7 @@ def structure(s):
                 accept_new_options=True,
             )
             st.warning("Esta operação substituirá os elementos apresentados na tabela. Depois da substituição, terá de rever e confirmar novamente a leitura do questionário.")
-            replace_reading = st.form_submit_button("Substituir a leitura automática")
+            replace_reading = st.form_submit_button("Substituir a leitura automática", type="tertiary")
             if replace_reading:
                 if not textual.strip():
                     st.error("Cole o conteúdo completo do questionário antes de substituir a leitura.")
@@ -336,7 +339,7 @@ def structure(s):
     if confirmation_key not in st.session_state:
         st.session_state[confirmation_key] = bool(s["confirmada"])
     explicit = st.checkbox(
-        "Revisei a leitura apresentada e confirmo que corresponde ao questionário original, mantendo identificada a informação que não foi possível confirmar.",
+        "Revi a leitura apresentada e confirmo que corresponde ao questionário original, mantendo identificada a informação que não foi possível confirmar.",
         key=confirmation_key,
         on_change=handle_confirmation_toggle,
     )
@@ -359,7 +362,7 @@ def structure(s):
                 "Os identificadores devem ser únicos.": "Use uma referência diferente para cada pergunta, instrução ou bloco.",
             }.get(str(exc), "Não foi possível guardar a leitura. Verifique os campos da tabela: cada elemento deve ter uma referência, texto e localização no original; nas listas, use uma entrada por linha."))
     st.write("Estado: " + ("Leitura do questionário confirmada" if s["confirmada"] else "A aguardar a sua confirmação da leitura do questionário"))
-    if st.button("Continuar para apreciação", disabled=not s["confirmada"]):
+    if st.button("Continuar para apreciação", disabled=not s["confirmada"], type="primary"):
         go(s, "review")
 
 
@@ -397,7 +400,7 @@ def review(s, key, model):
                     st.write(readable(o))
                 if v["pendencia_metodologica"]:
                     st.warning("Decisão metodológica pendente: " + v["pendencia_metodologica"])
-    if st.button("Continuar para esclarecimentos"):
+    if st.button("Continuar para esclarecimentos", type="primary"):
         go(s, "clarifications")
 
 
@@ -416,7 +419,7 @@ def clarifications(s):
                 visibility = st.selectbox("A resposta corresponde a", VISIBILITY)
                 unavailable = st.checkbox("Não disponho desta informação")
                 close = st.checkbox("Opto expressamente por fechar sem fornecer a informação")
-                if st.form_submit_button("Guardar resposta / fecho"):
+                if st.form_submit_button("Guardar resposta / fecho", type="primary"):
                     try:
                         answer(s, p["id"], response, visibility, unavailable, close)
                         st.rerun()
@@ -442,7 +445,7 @@ def clarifications(s):
                 version = st.text_input("Identificação da versão revista")
                 location = st.text_input("Localização na versão revista")
                 explicit = st.checkbox("Conferi e confirmo a incorporação no instrumento revisto")
-                if st.form_submit_button("Registar incorporação e reapreciar representação"):
+                if st.form_submit_button("Registar incorporação e reapreciar representação", type="primary"):
                     if not explicit or not all(x.strip() for x in (revised, version, location)):
                         st.error("É necessária confirmação expressa, texto, versão e localização.")
                     else:
@@ -459,7 +462,7 @@ def clarifications(s):
                         s["instrumento"]["versao"] = version
                         go(s, "structure")
     with st.container(horizontal=True):
-        if st.button("Retomar verificações dependentes"):
+        if st.button("Retomar verificações dependentes", type="primary"):
             go(s, "review")
         if st.button("Continuar para decisão humana"):
             go(s, "decisions")
@@ -471,7 +474,7 @@ def decisions(s, key, model):
     for c in CRITERIOS:
         with st.container(border=True):
             st.subheader(c)
-            if st.button("Preparar proposta fundamentada — " + c, disabled=not key, key="propose_" + c):
+            if st.button("Preparar proposta fundamentada — " + c, disabled=not key, key="propose_" + c, type="primary"):
                 try:
                     with st.spinner("A fundamentar a proposta…"):
                         propose(s, c, key, model)
@@ -491,7 +494,7 @@ def decisions(s, key, model):
                 reviewer = st.text_input("Responsável pela decisão")
                 rationale = st.text_area("Fundamentação da decisão humana")
                 explicit = st.checkbox("Valido expressamente esta decisão para a versão analisada")
-                if st.form_submit_button("Guardar decisão — " + c):
+                if st.form_submit_button("Guardar decisão — " + c, type="primary"):
                     try:
                         decide(s, c, category, rationale, reviewer, explicit)
                         st.success("Decisão humana registada.")
@@ -510,12 +513,14 @@ def report(s):
             for text in paragraphs:
                 st.write(text)
     with st.container(horizontal=True):
-        st.download_button("Descarregar DOCX", export_docx(s), "surv4impact_relatorio_prototipo.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-        st.download_button("Descarregar JSON", export_json(s), "surv4impact_relatorio_prototipo.json", "application/json")
+        st.download_button("Descarregar DOCX", export_docx(s), "surv4impact_relatorio_prototipo.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", type="secondary", key="download_report_docx")
+        st.download_button("Descarregar JSON", export_json(s), "surv4impact_relatorio_prototipo.json", "application/json", type="secondary", key="download_report_json")
 
 
 def main():
     st.set_page_config(page_title="SURV4IMPACT AI — Protótipo", layout="wide", initial_sidebar_state="expanded")
+    button_styles = Path(__file__).resolve().parents[1] / "assets" / "prototipo_buttons.css"
+    st.html(button_styles)
     st.session_state.setdefault("prototype", new_session())
     s = st.session_state.prototype
     brand()
@@ -546,7 +551,7 @@ def main():
         for stage, label in STAGE_LABELS.items():
             if st.button(label, key="nav_" + stage, type="primary" if s["stage"] == stage else "secondary"):
                 go(s, stage)
-        if st.button("Nova análise", key="reset"):
+        if st.button("Nova análise", key="reset", type="tertiary"):
             st.session_state.prototype = new_session()
             for name in list(st.session_state):
                 if name != "prototype":

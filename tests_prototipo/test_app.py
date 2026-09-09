@@ -14,7 +14,7 @@ from .test_brand import assert_native_header
 
 
 CONFIRMATION_TEXT = (
-    "Revisei a leitura apresentada e confirmo que corresponde ao questionário original, "
+    "Revi a leitura apresentada e confirmo que corresponde ao questionário original, "
     "mantendo identificada a informação que não foi possível confirmar."
 )
 SAVE_CONFIRMATION_TEXT = "Guardar e confirmar a leitura"
