@@ -10,7 +10,7 @@ from .extraction import extract, from_text
 from .models import Element, Category, SELECTION_RULES
 from .norma import ROOT, CRITERIOS, load_norma
 from .reporting import export_docx, export_json, sections, readable
-from .state import STAGES, new_session, transition, replace_document, save_representation, save_context, answer, decide, now, fingerprint
+from .state import STAGES, new_session, transition, replace_document, save_representation, save_context, answer, decide, now, fingerprint, withdraw_representation_confirmation
 from .table_export import (CSV_FILENAME, READING_COLUMNS, XLSX_FILENAME,
                            export_reading_csv, export_reading_xlsx, reading_rows)
 
@@ -243,6 +243,16 @@ def structure(s):
     with st.expander("Como rever esta tabela", expanded=False):
         for key, label in READING_COLUMNS:
             st.markdown(f"**{label}:** {COLUMN_GUIDANCE[key]}")
+    confirmation_key = f"confirm_reading_{s['id']}_{s['revisao']}"
+
+    def withdraw_confirmation():
+        withdraw_representation_confirmation(s)
+        st.session_state[confirmation_key] = False
+
+    def handle_confirmation_toggle():
+        if not st.session_state[confirmation_key]:
+            withdraw_representation_confirmation(s)
+
     option_elements = [element for element in s["representacao"] if element.get("opcoes")]
     if option_elements:
         with st.expander("Ver ou editar opções e escalas por pergunta", expanded=False):
@@ -259,6 +269,7 @@ def structure(s):
                 value="\n".join(selected["opcoes"]),
                 height=180,
                 key=f"option_detail_text_{s['id']}_{s['revisao']}_{selected_id}",
+                on_change=withdraw_confirmation,
             )
             if st.button("Guardar opções desta pergunta", key=f"option_detail_save_{s['id']}_{s['revisao']}_{selected_id}"):
                 options = [value.strip() for value in option_text.splitlines() if value.strip()]
@@ -266,10 +277,9 @@ def structure(s):
                 index = next(i for i, element in enumerate(elements) if element["id"] == selected_id)
                 elements[index]["opcoes"] = options
                 save_representation(s, elements, False, reason="correção das opções na leitura do questionário")
+                st.session_state[confirmation_key] = False
                 st.rerun()
-    confirmation_key = f"confirm_reading_{s['id']}_{s['revisao']}"
-    with st.form(f"structure_{s['id']}_{s['revisao']}", enter_to_submit=False):
-        editor = st.data_editor(editor_rows, num_rows="dynamic", hide_index=True, width="stretch", column_config={
+    editor = st.data_editor(editor_rows, num_rows="dynamic", hide_index=True, width="stretch", column_config={
             "id": st.column_config.TextColumn(dict(READING_COLUMNS)["id"], help=COLUMN_HEADER_HELP["id"]),
             "texto": st.column_config.TextColumn(dict(READING_COLUMNS)["texto"], width="large", help=COLUMN_HEADER_HELP["texto"]),
             "localizacao": st.column_config.TextColumn(dict(READING_COLUMNS)["localizacao"], help=COLUMN_HEADER_HELP["localizacao"]),
@@ -285,8 +295,9 @@ def structure(s):
             "numero_minimo": st.column_config.NumberColumn(dict(READING_COLUMNS)["numero_minimo"], min_value=0, step=1, format="%d", help=COLUMN_HEADER_HELP["numero_minimo"]),
             "numero_maximo": st.column_config.NumberColumn(dict(READING_COLUMNS)["numero_maximo"], min_value=0, step=1, format="%d", help=COLUMN_HEADER_HELP["numero_maximo"]),
             "outra_condicao_resposta": st.column_config.TextColumn(dict(READING_COLUMNS)["outra_condicao_resposta"], width="large", help=COLUMN_HEADER_HELP["outra_condicao_resposta"]),
-        }, key=f"repr_{s['id']}_{s['revisao']}")
-        with st.expander("Substituir toda a leitura automática (opcional)", expanded=False):
+        }, key=f"repr_{s['id']}_{s['revisao']}", on_change=withdraw_confirmation)
+    with st.expander("Substituir toda a leitura automática (opcional)", expanded=False):
+        with st.form(f"replace_reading_{s['id']}_{s['revisao']}", enter_to_submit=False):
             st.write(
                 "Utilize esta opção apenas se a leitura automática estiver demasiado incompleta para ser corrigida diretamente na tabela. "
                 "Cole o conteúdo completo do questionário, incluindo perguntas, instruções, opções e escalas de resposta e condições de percurso.\n\n"
@@ -321,8 +332,15 @@ def structure(s):
                     # substituto coincide com o anterior e a revisão não muda.
                     st.session_state[confirmation_key] = False
                     st.rerun()
-        explicit = st.checkbox("Confirmo que a leitura está correta e corresponde ao questionário original, mantendo assinaladas as situações em que não foi possível confirmar o formato de resposta", key=confirmation_key)
-        saved = st.form_submit_button("Guardar leitura e confirmação", type="primary")
+    st.write("Depois de rever e, se necessário, corrigir os elementos acima, confirme que a versão apresentada corresponde ao questionário original.")
+    if confirmation_key not in st.session_state:
+        st.session_state[confirmation_key] = bool(s["confirmada"])
+    explicit = st.checkbox(
+        "Revisei a leitura apresentada e confirmo que corresponde ao questionário original, mantendo identificada a informação que não foi possível confirmar.",
+        key=confirmation_key,
+        on_change=handle_confirmation_toggle,
+    )
+    saved = st.button("Guardar e confirmar a leitura", type="primary", disabled=not explicit)
     if saved:
         try:
             elements = []

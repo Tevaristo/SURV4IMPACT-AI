@@ -11,7 +11,8 @@ from prototipo.engine import review_criterion, propose, validate_batch
 from prototipo.models import Observation, Verification, ReviewBatch, CriterionProposal, Element
 from prototipo.norma import load_norma, CRITERIOS
 from prototipo.state import (new_session, transition, STAGES, replace_document, save_representation,
-                            save_context, register_batch, answer, decide, completed)
+                            save_context, register_batch, answer, decide, completed,
+                            withdraw_representation_confirmation)
 from prototipo.extraction import extract, from_text
 from prototipo.reporting import export_json, export_docx
 
@@ -134,6 +135,37 @@ def test_correction_invalidates_only_dependencies(session):
     assert "D2.4" in session["propostas"]
     assert session["instrumento"]["versao"] == version
     assert session["historico"][-1]["tipo"] == "correção da representação"
+
+
+def test_unconfirmed_correction_preserves_independent_results(session):
+    register_batch(session, ReviewBatch(verificacoes=[
+        verification("D2.3-R05", ["P1"]),
+        verification("D2.4-R01", ["P2"]),
+    ]))
+    session["propostas"]["D2.4"] = proposal().model_dump()
+    elements = deepcopy(session["representacao"])
+    elements[1]["texto"] += " Texto corrigido antes de nova confirmação."
+
+    save_representation(session, elements, False)
+
+    assert not session["confirmada"]
+    assert not session["confirmacao"]["explicita"]
+    assert "D2.3-R05" not in session["verificacoes"]
+    assert "D2.4-R01" in session["verificacoes"]
+    assert "D2.4" in session["propostas"]
+
+
+def test_withdrawing_confirmation_does_not_change_reading_or_results(session):
+    register_batch(session, ReviewBatch(verificacoes=[verification("D2.4-R01", ["P2"])]))
+    before_reading = deepcopy(session["representacao"])
+    before_results = deepcopy(session["verificacoes"])
+
+    withdraw_representation_confirmation(session)
+
+    assert not session["confirmada"]
+    assert not session["confirmacao"]["explicita"]
+    assert session["representacao"] == before_reading
+    assert session["verificacoes"] == before_results
 
 
 def test_context_visibility_and_invalidation(session):

@@ -65,6 +65,16 @@ def invalidate(s, changed, reason):
     return affected
 
 
+def withdraw_representation_confirmation(s):
+    """Retira a confirmação sem eliminar resultados ainda não afetados."""
+    s["confirmada"] = False
+    s["confirmacao"] = {
+        "data": now(),
+        "hash": fingerprint(s["representacao"]),
+        "explicita": False,
+    }
+
+
 def save_representation(s, elements, confirmed, reason="correção da representação"):
     parsed = [Element.model_validate(e).model_dump() for e in elements]
     if not parsed or any(not e["id"].strip() or not e["texto"].strip() or not e["localizacao"].strip() for e in parsed):
@@ -86,11 +96,11 @@ def save_representation(s, elements, confirmed, reason="correção da representa
         s["historico"].append({"data": now(), "tipo": reason, "elementos": sorted(changed),
                                "antes": s["representacao"], "depois": parsed, "verificacoes_a_repetir": affected})
     s["representacao"] = parsed
-    s["confirmada"] = bool(confirmed)
-    s["confirmacao"] = {"data": now(), "hash": fingerprint(parsed), "explicita": bool(confirmed)}
-    if not confirmed:
-        s["propostas"].clear()
-        s["decisoes"].clear()
+    if confirmed:
+        s["confirmada"] = True
+        s["confirmacao"] = {"data": now(), "hash": fingerprint(parsed), "explicita": True}
+    else:
+        withdraw_representation_confirmation(s)
 
 
 def save_context(s, context, documents):

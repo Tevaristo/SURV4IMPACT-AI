@@ -13,6 +13,13 @@ from prototipo.state import save_representation
 from .test_brand import assert_native_header
 
 
+CONFIRMATION_TEXT = (
+    "Revisei a leitura apresentada e confirmo que corresponde ao questionário original, "
+    "mantendo identificada a informação que não foi possível confirmar."
+)
+SAVE_CONFIRMATION_TEXT = "Guardar e confirmar a leitura"
+
+
 def app():
     return AppTest.from_file(str(ROOT / "app_prototipo.py"), default_timeout=30).run()
 
@@ -28,6 +35,65 @@ def test_startup_and_institutional_identity():
     assert_native_header(a)
 
 
+def test_reading_confirmation_is_explicit_even_without_corrections():
+    a = app()
+    a.button(key="demo").click().run()
+    s = a.session_state["prototype"]
+    original = deepcopy(s["representacao"])
+    revision = s["revisao"]
+    instruction = (
+        "Depois de rever e, se necessário, corrigir os elementos acima, confirme que a versão apresentada "
+        "corresponde ao questionário original."
+    )
+    assert any(node.value == instruction for node in a.markdown)
+    confirmation = next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT)
+    save = next(b for b in a.button if b.label == SAVE_CONFIRMATION_TEXT)
+    assert not confirmation.value
+    assert save.disabled
+
+    confirmation.check().run()
+    assert not s["confirmada"]
+    assert s["representacao"] == original
+    assert not next(b for b in a.button if b.label == SAVE_CONFIRMATION_TEXT).disabled
+
+    click_label(a, SAVE_CONFIRMATION_TEXT)
+    assert s["confirmada"]
+    assert s["confirmacao"]["explicita"]
+    assert s["representacao"] == original
+    assert s["revisao"] == revision
+
+
+def test_correction_withdraws_confirmation_and_requires_a_new_confirmation():
+    a = app()
+    a.button(key="demo").click().run()
+    s = a.session_state["prototype"]
+    next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT).check().run()
+    click_label(a, SAVE_CONFIRMATION_TEXT)
+    assert s["confirmada"]
+
+    panel = next(item for item in a.expander if item.label == "Ver ou editar opções e escalas por pergunta")
+    panel.text_area[0].input("1\n2\n3").run()
+    assert not s["confirmada"]
+    assert not s["confirmacao"]["explicita"]
+    assert not next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT).value
+    assert next(b for b in a.button if b.label == SAVE_CONFIRMATION_TEXT).disabled
+
+    panel = next(item for item in a.expander if item.label == "Ver ou editar opções e escalas por pergunta")
+    panel.button[0].click().run()
+    assert next(e for e in s["representacao"] if e["id"] == "P2a")["opcoes"] == ["1", "2", "3"]
+    assert not s["confirmada"]
+    assert next(b for b in a.button if b.label == SAVE_CONFIRMATION_TEXT).disabled
+
+    next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT).check().run()
+    click_label(a, SAVE_CONFIRMATION_TEXT)
+    assert s["confirmada"]
+
+    panel = next(item for item in a.expander if item.label == "Ver ou editar opções e escalas por pergunta")
+    panel.text_area[0].input("1\n2").run()
+    assert not s["confirmada"]
+    assert next(b for b in a.button if b.label == SAVE_CONFIRMATION_TEXT).disabled
+
+
 def test_navigation_full_partial_report_and_new_analysis():
     a = app()
     a.button(key="nav_review").click().run()
@@ -36,14 +102,15 @@ def test_navigation_full_partial_report_and_new_analysis():
     assert a.session_state["prototype"]["stage"] == "structure"
     assert a.button(key="nav_structure").label == "Rever a leitura do questionário"
     assert a.header[0].value == "Rever a leitura do questionário"
-    click_label(a, "Guardar leitura e confirmação")
+    assert next(b for b in a.button if b.label == SAVE_CONFIRMATION_TEXT).disabled
     assert not a.session_state["prototype"]["confirmada"]
     assert next(b for b in a.button if b.label == "Continuar para apreciação").disabled
     a.button(key="nav_review").click().run()
     assert a.session_state["prototype"]["stage"] == "structure"
     assert any(w.value == "Confirme que a leitura do questionário está correta antes de iniciar a análise." for w in a.warning)
-    next(c for c in a.checkbox if c.label.startswith("Confirmo que a leitura está correta")).check()
-    click_label(a, "Guardar leitura e confirmação")
+    next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT).check().run()
+    assert not next(b for b in a.button if b.label == SAVE_CONFIRMATION_TEXT).disabled
+    click_label(a, SAVE_CONFIRMATION_TEXT)
     assert a.session_state["prototype"]["confirmada"]
     for stage in ("intake", "structure", "review", "clarifications", "decisions", "report"):
         a.button(key="nav_" + stage).click().run()
@@ -92,8 +159,8 @@ def test_full_reading_replacement_is_explicit_and_requires_new_confirmation():
     panel.selectbox[0].set_value("Questionário completo")
     a.run()
     assert s["representacao"] == original
-    next(c for c in a.checkbox if c.label.startswith("Confirmo que a leitura")).check()
-    click_label(a, "Guardar leitura e confirmação")
+    next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT).check().run()
+    click_label(a, SAVE_CONFIRMATION_TEXT)
     assert s["representacao"] == original and s["confirmada"]
 
     # Resultados técnicos com dependências explícitas, sem apreciação simulada.
@@ -113,13 +180,13 @@ def test_full_reading_replacement_is_explicit_and_requires_new_confirmation():
     assert any("Questionário completo" in line for _, lines in sections(s) for line in lines)
     assert payload(s)["representacao"][0]["localizacao"] == "Conteúdo introduzido pelo utilizador"
     assert "rastreabilidade_substituicao" not in payload(s)
-    confirmation = next(c for c in a.checkbox if c.label.startswith("Confirmo que a leitura"))
+    confirmation = next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT)
     assert not confirmation.value
     assert next(b for b in a.button if b.label == "Continuar para apreciação").disabled
     a.button(key="nav_review").click().run()
     assert s["stage"] == "structure"
-    next(c for c in a.checkbox if c.label.startswith("Confirmo que a leitura")).check()
-    click_label(a, "Guardar leitura e confirmação")
+    next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT).check().run()
+    click_label(a, SAVE_CONFIRMATION_TEXT)
     assert s["confirmada"]
 
     # Mesmo texto: a nova substituição não pode herdar a confirmação anterior.
@@ -128,15 +195,15 @@ def test_full_reading_replacement_is_explicit_and_requires_new_confirmation():
     click_label(a, "Substituir a leitura automática")
     assert s["revisao"] == revision
     assert not s["confirmada"]
-    assert not next(c for c in a.checkbox if c.label.startswith("Confirmo que a leitura")).value
+    assert not next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT).value
     assert s["verificacoes"] == {"D2.4-R06": independent}
 
 
 def test_empty_full_reading_replacement_preserves_current_content():
     a = app()
     a.button(key="demo").click().run()
-    next(c for c in a.checkbox if c.label.startswith("Confirmo que a leitura")).check()
-    click_label(a, "Guardar leitura e confirmação")
+    next(c for c in a.checkbox if c.label == CONFIRMATION_TEXT).check().run()
+    click_label(a, SAVE_CONFIRMATION_TEXT)
     before = deepcopy(a.session_state["prototype"])
     next(t for t in a.text_area if t.label == "Conteúdo completo do questionário").input("   ")
     click_label(a, "Substituir a leitura automática")
